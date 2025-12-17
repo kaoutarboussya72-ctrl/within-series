@@ -1,0 +1,243 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'georgia', sans-serif;
+    line-height: 1.6;
+    color: #0A1F44;
+    background-color: #fff;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Georgia', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #FFD700;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0A1F44;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #0A1F44;
+}
+
+p {
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #041842;
+}
+
+/* Container for Centering Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #0A1F44;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #FFD700;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero p {
+    color: #8f95b0;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background-color: #F5F5F5;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 4rem 2rem;
+    background-color: #EFEFEF;
+}
+
+.benefits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.benefit {
+    flex: 1 1 250px;
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Products Section */
+.products {
+    padding: 4rem 2rem;
+    background-color: #020847;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: nowrap; /* DO NOT wrap */
+    gap: 2rem;
+    justify-content: center; /* center the row */
+    overflow-x: auto; /* allow horizontal scrolling if screen is too small */
+    padding-bottom: 1rem; /* extra space for scrolling */
+}
+
+.product {
+    flex: 0 0 220px; /* fixed width so all items sit horizontally */
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #FFD700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ebook-cover {
+    width: 180px;
+    height: 270px;
+    background-color: #EFEFEF;
+    margin: 0 auto 1rem;
+    border-radius: 4px;
+    border: 1px solid #FFD700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .products-grid {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-grid, .products-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ebook-cover {
+        width: 150px;
+        height: 225px;
+    }
+}
+
+
+/* Call-to-Action Section */
+.cta {
+    padding: 4rem 2rem;
+    background-color: #0A1F44;
+    text-align: center;
+    color: #FFD700;
+}
+
+.cta h2, .cta p {
+    color: #fff;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #FFD700;
+    color: #0A1F44;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem;
+    background-color: #dfe0e1;
+    color: #FFD700;
+    text-align: center;
+}
+
+.footer .social-links {
+    margin-top: 1rem;
+}
+
+.footer .social-links a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 400;
+}
+
+.footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .benefits-grid, .products-grid { flex-direction: column; align-items: center; }
+    .container { padding: 0 1rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    .hero, .about, .benefits, .products, .cta { padding: 2rem 1rem; }
+    .ebook-cover { width: 150px; height: 225px; }
+    .footer .social-links a { display: block; margin: 0.5rem 0; }
+}
+@media (max-width: 480px) {
+    .ebook-cover {
+        width: 150px;
+        height: 225px;
+    }
+}
+
+/* Horizontal scrollbar styling for products-grid */
+.products-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.products-grid::-webkit-scrollbar-thumb {
+    background-color: #FFD700;
+    border-radius: 4px;
+}
